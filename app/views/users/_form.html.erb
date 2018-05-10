@@ -1,0 +1,34 @@
+<%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <!-- template that I want to put rails scaffolding into -->
+  <!-- <div class="box"> -->
+  <div class="field is-grouped">
+    <p class="control is-expanded">
+      <%= form.text_field :instagram, id: :user_instagram, :class => "input", :type => "text", :placeholder => "Your Instagram Handle" %>
+      <!-- <input class="input" type="text" placeholder="Your Instagram Handle"> -->
+    </p>
+    <p class="control">
+      <%= form.submit class: 'button is-grey' %>
+    </p>
+  </div>
+  <!-- </div> -->
+  <!-- Rails scaffolding -->
+  <!-- <div class="field">
+  <%= form.label :instagram %>
+  <%= form.text_field :instagram, id: :user_instagram, :class => "input" %> -->
+  <!-- </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>  -->
+<% end %>
